@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ||
-  "5562994043036";
+  "5562998213325";
 
 const whatsappUrl =
   `https://wa.me/${WHATSAPP_NUMBER}` +
@@ -197,7 +197,7 @@ export default function ConversionSections() {
   return (
     <>
       {/* FAIXA DE CONFIANÇA */}
-      <section className="relative z-10 border-y border-white/10 bg-[#080b09]">
+      <section className="relative z-10 border-y border-white/10 bg-[#050914]">
         <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-white/10 px-4 sm:px-6 md:grid-cols-4 md:divide-y-0 lg:px-8">
           <div className="flex min-h-28 flex-col justify-center px-4 py-5 sm:px-6">
             <strong className="text-sm font-black text-white sm:text-base">
@@ -244,11 +244,11 @@ export default function ConversionSections() {
       {/* TRATAMENTO */}
       <section
         id="tratamento"
-        className="scroll-mt-24 bg-[#050706] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+        className="scroll-mt-24 bg-[#03050a] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
       >
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <span className="text-xs font-black uppercase tracking-[0.22em] text-green-500">
+            <span className="text-xs font-black uppercase tracking-[0.22em] text-blue-500">
               O primeiro passo
             </span>
 
@@ -266,14 +266,14 @@ export default function ConversionSections() {
             {etapas.map((etapa) => (
               <article
                 key={etapa.numero}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#0b0f0c] p-6 transition duration-300 hover:-translate-y-1 hover:border-green-500/30 sm:p-7"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#070d1a] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500/30 sm:p-7"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-green-500/20 bg-green-500/10 text-green-400">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10 text-blue-400">
                     {etapa.icone}
                   </div>
 
-                  <span className="text-4xl font-black text-white/[0.04] transition group-hover:text-green-500/10">
+                  <span className="text-4xl font-black text-white/[0.04] transition group-hover:text-blue-500/10">
                     {etapa.numero}
                   </span>
                 </div>
@@ -292,10 +292,10 @@ export default function ConversionSections() {
       </section>
 
       {/* CTA INTERMEDIÁRIO */}
-      <section className="px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] border border-green-500/20 bg-gradient-to-r from-green-950/70 via-[#0a140d] to-[#070a08] px-5 py-8 sm:px-8 sm:py-10 lg:flex lg:items-center lg:justify-between lg:px-12">
+      <section className="bg-[#03050a] px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] border border-blue-500/20 bg-gradient-to-r from-blue-950/70 via-[#071327] to-[#030711] px-5 py-8 sm:px-8 sm:py-10 lg:flex lg:items-center lg:justify-between lg:px-12">
           <div className="relative z-10 max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-wider text-green-500">
+            <p className="text-xs font-bold uppercase tracking-wider text-blue-500">
               Não espere a situação piorar
             </p>
 
@@ -312,7 +312,7 @@ export default function ConversionSections() {
           <div className="relative z-10 mt-6 flex flex-col gap-3 sm:flex-row lg:mt-0">
             <a
               href="#formulario"
-              className="flex min-h-13 items-center justify-center rounded-xl bg-green-600 px-6 py-4 text-center text-sm font-black transition hover:bg-green-500"
+              className="flex min-h-13 items-center justify-center rounded-xl bg-blue-600 px-6 py-4 text-center text-sm font-black transition hover:bg-blue-500"
             >
               Solicitar atendimento
             </a>
@@ -321,21 +321,21 @@ export default function ConversionSections() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-13 items-center justify-center rounded-xl border border-white/15 px-6 py-4 text-center text-sm font-bold transition hover:border-green-500/40 hover:bg-green-500/10"
+              className="flex min-h-13 items-center justify-center rounded-xl border border-white/15 px-6 py-4 text-center text-sm font-bold transition hover:border-blue-500/40 hover:bg-blue-500/10"
             >
               Falar no WhatsApp
             </a>
           </div>
 
-          <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-green-500/10 blur-[80px]" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-500/10 blur-[80px]" />
         </div>
       </section>
 
       {/* DIFERENCIAIS */}
-      <section className="border-y border-white/10 bg-[#080b09] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <section className="border-y border-white/10 bg-[#050914] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-xs font-black uppercase tracking-[0.22em] text-green-500">
+            <span className="text-xs font-black uppercase tracking-[0.22em] text-blue-500">
               Por que escolher
             </span>
 
@@ -353,9 +353,9 @@ export default function ConversionSections() {
             {diferenciais.map((diferencial) => (
               <article
                 key={diferencial.titulo}
-                className="group rounded-3xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-green-500/25 hover:bg-green-500/[0.04]"
+                className="group rounded-3xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500/25 hover:bg-blue-500/[0.04]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-xl text-green-500 transition group-hover:border-green-500/20 group-hover:bg-green-500/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-xl text-blue-500 transition group-hover:border-blue-500/20 group-hover:bg-blue-500/10">
                   {diferencial.icone}
                 </div>
 
@@ -375,12 +375,12 @@ export default function ConversionSections() {
       {/* ESTRUTURA */}
       <section
         id="estrutura"
-        className="scroll-mt-24 bg-[#050706] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+        className="scroll-mt-24 bg-[#03050a] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
       >
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div>
-              <span className="text-xs font-black uppercase tracking-[0.22em] text-green-500">
+              <span className="text-xs font-black uppercase tracking-[0.22em] text-blue-500">
                 Nossa estrutura
               </span>
 
@@ -395,7 +395,7 @@ export default function ConversionSections() {
 
               <div className="mt-8 grid grid-cols-2 gap-3">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-4">
-                  <strong className="text-2xl font-black text-green-500">
+                  <strong className="text-2xl font-black text-blue-500">
                     30
                   </strong>
 
@@ -405,7 +405,7 @@ export default function ConversionSections() {
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-4">
-                  <strong className="text-2xl font-black text-green-500">
+                  <strong className="text-2xl font-black text-blue-500">
                     24h
                   </strong>
 
@@ -420,13 +420,13 @@ export default function ConversionSections() {
               {estrutura.map((item, index) => (
                 <article
                   key={item.titulo}
-                  className={`relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#101511] to-[#090c0a] p-6 sm:min-h-56 ${
+                  className={`relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0b1427] to-[#050914] p-6 sm:min-h-56 ${
                     index === 0 || index === 3
                       ? "sm:translate-y-5"
                       : ""
                   }`}
                 >
-                  <span className="text-xs font-black text-green-500">
+                  <span className="text-xs font-black text-blue-500">
                     0{index + 1}
                   </span>
 
@@ -438,7 +438,7 @@ export default function ConversionSections() {
                     {item.descricao}
                   </p>
 
-                  <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-green-500/[0.06] blur-3xl" />
+                  <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-blue-500/[0.06] blur-3xl" />
                 </article>
               ))}
             </div>
@@ -449,11 +449,11 @@ export default function ConversionSections() {
       {/* FAQ */}
       <section
         id="faq"
-        className="scroll-mt-24 border-t border-white/10 bg-[#080b09] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
+        className="scroll-mt-24 border-t border-white/10 bg-[#050914] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28"
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <span className="text-xs font-black uppercase tracking-[0.22em] text-green-500">
+            <span className="text-xs font-black uppercase tracking-[0.22em] text-blue-500">
               Tire suas dúvidas
             </span>
 
@@ -470,7 +470,7 @@ export default function ConversionSections() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex min-h-12 items-center justify-center rounded-xl border border-green-500/25 bg-green-500/10 px-5 text-sm font-black text-green-300 transition hover:bg-green-500/20"
+              className="mt-7 inline-flex min-h-12 items-center justify-center rounded-xl border border-blue-500/25 bg-blue-500/10 px-5 text-sm font-black text-blue-300 transition hover:bg-blue-500/20"
             >
               Tirar dúvidas pelo WhatsApp
             </a>
@@ -485,7 +485,7 @@ export default function ConversionSections() {
                   key={item.pergunta}
                   className={`overflow-hidden rounded-2xl border transition ${
                     aberta
-                      ? "border-green-500/25 bg-green-500/[0.05]"
+                      ? "border-blue-500/25 bg-blue-500/[0.05]"
                       : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
@@ -502,7 +502,7 @@ export default function ConversionSections() {
                     </span>
 
                     <span
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 text-xl text-green-500 transition ${
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 text-xl text-blue-500 transition ${
                         aberta ? "rotate-45" : ""
                       }`}
                     >
@@ -531,10 +531,11 @@ export default function ConversionSections() {
       </section>
 
       {/* CTA FINAL */}
-      <section className="relative overflow-hidden bg-[#050706] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
+      <section className="relative overflow-hidden bg-[#03050a] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2 text-xs font-bold text-green-400">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-green-500" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-xs font-bold text-blue-400">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-blue-500" />
+
             Atendimento disponível agora
           </span>
 
@@ -550,14 +551,14 @@ export default function ConversionSections() {
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               href="#formulario"
-              className="flex min-h-14 items-center justify-center rounded-xl bg-green-600 px-7 text-sm font-black transition hover:bg-green-500 sm:text-base"
+              className="flex min-h-14 items-center justify-center rounded-xl bg-blue-600 px-7 text-sm font-black transition hover:bg-blue-500 sm:text-base"
             >
               Solicitar atendimento agora
             </a>
 
             <a
               href={`tel:+${WHATSAPP_NUMBER}`}
-              className="flex min-h-14 items-center justify-center rounded-xl border border-white/15 px-7 text-sm font-bold transition hover:border-green-500/30 hover:bg-green-500/10 sm:text-base"
+              className="flex min-h-14 items-center justify-center rounded-xl border border-white/15 px-7 text-sm font-bold transition hover:border-blue-500/30 hover:bg-blue-500/10 sm:text-base"
             >
               Ligar para a equipe
             </a>
@@ -568,16 +569,16 @@ export default function ConversionSections() {
           </p>
         </div>
 
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-green-500/[0.06] blur-[130px]" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/[0.06] blur-[130px]" />
       </section>
 
       {/* RODAPÉ */}
-      <footer className="border-t border-white/10 bg-[#030403] px-4 py-8 sm:px-6 lg:px-8">
+      <footer className="border-t border-white/10 bg-[#02040a] px-4 py-8 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <div>
             <p className="font-black">
               ÁGUIAS
-              <span className="text-green-500">
+              <span className="text-blue-500">
                 {" "}
                 DE CRISTO
               </span>
@@ -607,7 +608,7 @@ export default function ConversionSections() {
           target="_blank"
           rel="noopener noreferrer"
           data-track-id="whatsapp-flutuante"
-          className="flex min-h-12 items-center justify-center rounded-xl bg-green-600 px-5 text-sm font-black text-white transition hover:bg-green-500"
+          className="flex min-h-12 items-center justify-center rounded-xl bg-blue-600 px-5 text-sm font-black text-white transition hover:bg-blue-500"
         >
           Falar no WhatsApp
         </a>
@@ -616,14 +617,14 @@ export default function ConversionSections() {
           href={`tel:+${WHATSAPP_NUMBER}`}
           data-track-id="telefone-flutuante"
           aria-label="Ligar agora"
-          className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-lg text-green-400"
+          className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-lg text-blue-400"
         >
           ☎
         </a>
       </div>
 
       {/* ESPAÇO PARA O BOTÃO FIXO NO CELULAR */}
-      <div className="h-20 bg-[#030403] lg:hidden" />
+      <div className="h-20 bg-[#02040a] lg:hidden" />
     </>
   );
 }

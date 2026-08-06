@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ||
-  "5562994043036";
+  "5562998213325";
 
 export default function ObrigadoPage() {
   const [nome, setNome] = useState("");
@@ -29,37 +29,55 @@ export default function ObrigadoPage() {
     `?text=${mensagemWhatsApp}`;
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050706] px-4 py-10 text-white sm:px-6">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#03050a] px-4 py-10 text-white sm:px-6">
       {/* FUNDO */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero.png"
+          src="/images/hero-aguias.jpg"
           alt=""
           className="h-full w-full object-cover object-center opacity-20"
         />
 
         <div className="absolute inset-0 bg-black/85" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,197,94,0.16),transparent_38%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.18),transparent_38%)]" />
 
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(22,163,74,0.10),transparent_38%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(30,64,175,0.12),transparent_38%)]" />
+      </div>
+
+      {/* LOGO COMO MARCA-D'ÁGUA */}
+      <div className="pointer-events-none absolute right-[-100px] top-1/2 hidden -translate-y-1/2 opacity-[0.07] lg:block">
+        <img
+          src="/images/logo-aguias.png"
+          alt=""
+          aria-hidden="true"
+          className="h-auto w-[520px] object-contain grayscale"
+        />
       </div>
 
       {/* DECORAÇÃO */}
-      <div className="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full bg-green-500/10 blur-[100px] sm:h-96 sm:w-96" />
+      <div className="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full bg-blue-500/10 blur-[100px] sm:h-96 sm:w-96" />
 
-      <div className="pointer-events-none absolute -bottom-32 -left-28 h-80 w-80 rounded-full bg-green-700/10 blur-[110px] sm:h-[420px] sm:w-[420px]" />
+      <div className="pointer-events-none absolute -bottom-32 -left-28 h-80 w-80 rounded-full bg-blue-700/10 blur-[110px] sm:h-[420px] sm:w-[420px]" />
 
       <section className="relative z-10 w-full max-w-2xl">
         {/* LOGO */}
         <div className="mb-7 text-center sm:mb-9">
           <a
             href="/"
-            className="inline-flex flex-col"
+            className="inline-flex flex-col items-center"
           >
-            <strong className="text-xl font-black tracking-wide sm:text-2xl">
+            <div className="flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-blue-400/20 bg-white shadow-[0_15px_45px_rgba(0,0,0,0.25)] sm:h-28 sm:w-28">
+              <img
+                src="/images/logo-aguias.png"
+                alt="Logo Águias de Cristo"
+                className="h-full w-full object-contain p-2"
+              />
+            </div>
+
+            <strong className="mt-4 text-xl font-black tracking-wide sm:text-2xl">
               ÁGUIAS
-              <span className="text-green-500">
+              <span className="text-blue-400">
                 {" "}
                 DE CRISTO
               </span>
@@ -72,16 +90,16 @@ export default function ObrigadoPage() {
         </div>
 
         {/* CARD */}
-        <div className="overflow-hidden rounded-[26px] border border-white/10 bg-black/55 shadow-[0_35px_120px_rgba(0,0,0,0.75)] backdrop-blur-2xl sm:rounded-[32px]">
-          <div className="border-b border-white/10 bg-green-500/[0.04] px-5 py-8 text-center sm:px-10 sm:py-10">
+        <div className="overflow-hidden rounded-[26px] border border-blue-400/15 bg-black/60 shadow-[0_35px_120px_rgba(0,0,0,0.75)] backdrop-blur-2xl sm:rounded-[32px]">
+          <div className="border-b border-white/10 bg-blue-500/[0.04] px-5 py-8 text-center sm:px-10 sm:py-10">
             {/* ÍCONE */}
-            <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-green-500/30 bg-green-500/10 sm:h-24 sm:w-24">
-              <div className="absolute inset-2 animate-pulse rounded-full bg-green-500/5" />
+            <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-blue-500/30 bg-blue-500/10 sm:h-24 sm:w-24">
+              <div className="absolute inset-2 animate-pulse rounded-full bg-blue-500/5" />
 
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="relative h-10 w-10 text-green-500 sm:h-12 sm:w-12"
+                className="relative h-10 w-10 text-blue-400 sm:h-12 sm:w-12"
                 aria-hidden="true"
               >
                 <path
@@ -94,7 +112,7 @@ export default function ObrigadoPage() {
               </svg>
             </div>
 
-            <p className="mt-6 text-xs font-black uppercase tracking-[0.2em] text-green-500">
+            <p className="mt-6 text-xs font-black uppercase tracking-[0.2em] text-blue-400">
               Solicitação recebida
             </p>
 
@@ -113,12 +131,12 @@ export default function ObrigadoPage() {
 
           <div className="px-5 py-6 sm:px-10 sm:py-8">
             {/* STATUS */}
-            <div className="rounded-2xl border border-green-500/20 bg-green-500/[0.07] p-4 sm:p-5">
+            <div className="rounded-2xl border border-blue-500/20 bg-blue-500/[0.07] p-4 sm:p-5">
               <div className="flex items-start gap-3">
-                <span className="mt-1 h-2.5 w-2.5 shrink-0 animate-pulse rounded-full bg-green-500" />
+                <span className="mt-1 h-2.5 w-2.5 shrink-0 animate-pulse rounded-full bg-blue-400" />
 
                 <div>
-                  <p className="text-sm font-black text-green-300">
+                  <p className="text-sm font-black text-blue-300">
                     Equipe disponível agora
                   </p>
 
@@ -136,7 +154,7 @@ export default function ObrigadoPage() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-14 items-center justify-center gap-3 rounded-xl bg-green-600 px-5 text-center text-sm font-black text-white shadow-[0_15px_45px_rgba(22,163,74,0.25)] transition hover:-translate-y-0.5 hover:bg-green-500 sm:text-base"
+                className="flex min-h-14 items-center justify-center gap-3 rounded-xl bg-blue-600 px-5 text-center text-sm font-black text-white shadow-[0_15px_45px_rgba(37,99,235,0.28)] transition hover:-translate-y-0.5 hover:bg-blue-500 sm:text-base"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -163,12 +181,12 @@ export default function ObrigadoPage() {
 
               <a
                 href={`tel:+${WHATSAPP_NUMBER}`}
-                className="flex min-h-14 items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.035] px-5 text-center text-sm font-bold text-gray-200 transition hover:border-green-500/30 hover:bg-green-500/10 hover:text-green-300 sm:text-base"
+                className="flex min-h-14 items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.035] px-5 text-center text-sm font-bold text-gray-200 transition hover:border-blue-500/30 hover:bg-blue-500/10 hover:text-blue-300 sm:text-base"
               >
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="h-5 w-5 text-green-500"
+                  className="h-5 w-5 text-blue-400"
                   aria-hidden="true"
                 >
                   <path
@@ -186,7 +204,7 @@ export default function ObrigadoPage() {
 
             <a
               href="/"
-              className="mx-auto mt-6 flex w-fit items-center justify-center rounded-lg px-4 py-2 text-sm text-gray-500 transition hover:bg-white/5 hover:text-green-500"
+              className="mx-auto mt-6 flex w-fit items-center justify-center rounded-lg px-4 py-2 text-sm text-gray-500 transition hover:bg-white/5 hover:text-blue-400"
             >
               ← Voltar para a página inicial
             </a>
@@ -196,7 +214,7 @@ export default function ObrigadoPage() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="mt-0.5 h-5 w-5 shrink-0 text-green-500"
+                className="mt-0.5 h-5 w-5 shrink-0 text-blue-400"
                 aria-hidden="true"
               >
                 <path
