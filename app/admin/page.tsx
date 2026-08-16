@@ -620,6 +620,8 @@ export default function AdminPage() {
       (lead) => lead.id === leadId
     )?.status;
 
+    setErro("");
+
     setLeads((atuais) =>
       atuais.map((lead) =>
         lead.id === leadId
@@ -650,6 +652,7 @@ export default function AdminPage() {
       .from("leads")
       .update({
         status: novoStatus,
+        updated_at: new Date().toISOString(),
       })
       .eq("id", leadId);
 
@@ -670,11 +673,70 @@ export default function AdminPage() {
               : lead
           )
         );
+
+        if (leadSelecionado?.id === leadId) {
+          setLeadSelecionado((atual) =>
+            atual
+              ? {
+                  ...atual,
+                  status: statusAnterior,
+                }
+              : atual
+          );
+        }
       }
 
       setErro(
-        "Não foi possível atualizar o status do lead."
+        `Não foi possível atualizar o status do lead: ${error.message}`
       );
+
+      return;
+    }
+  }
+
+  async function excluirLead(
+    leadId: string,
+    nomeLead: string
+  ) {
+    const confirmar = window.confirm(
+      `Tem certeza que deseja excluir o lead "${nomeLead}"?\n\nEssa ação não poderá ser desfeita.`
+    );
+
+    if (!confirmar) {
+      return;
+    }
+
+    setErro("");
+
+    const supabase =
+      createSupabaseBrowserClient();
+
+    const { error } = await supabase
+      .from("leads")
+      .delete()
+      .eq("id", leadId);
+
+    if (error) {
+      console.error(
+        "Erro ao excluir lead:",
+        error
+      );
+
+      setErro(
+        `Não foi possível excluir o lead: ${error.message}`
+      );
+
+      return;
+    }
+
+    setLeads((atuais) =>
+      atuais.filter(
+        (lead) => lead.id !== leadId
+      )
+    );
+
+    if (leadSelecionado?.id === leadId) {
+      setLeadSelecionado(null);
     }
   }
 
@@ -1865,6 +1927,19 @@ export default function AdminPage() {
                                 >
                                   Ver
                                 </button>
+
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    excluirLead(
+                                      lead.id,
+                                      lead.nome
+                                    )
+                                  }
+                                  className="rounded-lg border border-red-500/20 bg-red-500/10 px-3 py-2 text-xs font-semibold text-red-300 transition hover:border-red-500/40 hover:bg-red-500/20 hover:text-red-200"
+                                >
+                                  Excluir
+                                </button>
                               </div>
                             </td>
                           </tr>
@@ -1946,7 +2021,7 @@ export default function AdminPage() {
                       </div>
                     </div>
 
-                    <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                    <div className="mt-4 flex flex-col gap-3">
                       <select
                         value={lead.status}
                         onChange={(event) =>
@@ -1973,19 +2048,34 @@ export default function AdminPage() {
                         )}
                       </select>
 
-                      <a
-                        href={`https://wa.me/55${lead.telefone.replace(
-                          /\D/g,
-                          ""
-                        )}?text=${gerarMensagemWhatsApp(
-                          lead
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex h-11 items-center justify-center rounded-xl bg-green-600 px-4 text-sm font-black transition hover:bg-green-500"
-                      >
-                        Chamar no WhatsApp
-                      </a>
+                      <div className="grid grid-cols-2 gap-3">
+                        <a
+                          href={`https://wa.me/55${lead.telefone.replace(
+                            /\D/g,
+                            ""
+                          )}?text=${gerarMensagemWhatsApp(
+                            lead
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex h-11 items-center justify-center rounded-xl bg-green-600 px-3 text-center text-xs font-black transition hover:bg-green-500"
+                        >
+                          WhatsApp
+                        </a>
+
+                        <button
+                          type="button"
+                          onClick={() =>
+                            excluirLead(
+                              lead.id,
+                              lead.nome
+                            )
+                          }
+                          className="flex h-11 items-center justify-center rounded-xl border border-red-500/20 bg-red-500/10 px-3 text-xs font-bold text-red-300 transition hover:bg-red-500/20"
+                        >
+                          Excluir lead
+                        </button>
+                      </div>
                     </div>
                   </article>
                 ))}
@@ -2376,6 +2466,29 @@ export default function AdminPage() {
                 >
                   Fazer ligação
                 </a>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    excluirLead(
+                      leadSelecionado.id,
+                      leadSelecionado.nome
+                    )
+                  }
+                  className="flex min-h-12 items-center justify-center rounded-xl border border-red-500/25 bg-red-500/10 px-4 text-center text-sm font-bold text-red-300 transition hover:border-red-500/40 hover:bg-red-500/20"
+                >
+                  Excluir este lead
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() =>
+                    setLeadSelecionado(null)
+                  }
+                  className="flex min-h-12 items-center justify-center rounded-xl border border-white/10 px-4 text-center text-sm font-bold text-gray-400 transition hover:bg-white/5 hover:text-white"
+                >
+                  Fechar
+                </button>
               </div>
             </div>
           </section>
