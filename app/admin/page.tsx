@@ -418,6 +418,15 @@ export default function AdminPage() {
   const [leadSelecionado, setLeadSelecionado] =
     useState<Lead | null>(null);
 
+  const [leadParaExcluir, setLeadParaExcluir] =
+    useState<{
+      id: string;
+      nome: string;
+    } | null>(null);
+
+  const [excluindoLead, setExcluindoLead] =
+    useState(false);
+
   const carregarDados = useCallback(
     async (mostrarCarregamento = false) => {
       if (mostrarCarregamento) {
@@ -694,19 +703,25 @@ export default function AdminPage() {
     }
   }
 
-  async function excluirLead(
+  function excluirLead(
     leadId: string,
     nomeLead: string
   ) {
-    const confirmar = window.confirm(
-      `Tem certeza que deseja excluir o lead "${nomeLead}"?\n\nEssa ação não poderá ser desfeita.`
-    );
+    setLeadParaExcluir({
+      id: leadId,
+      nome: nomeLead,
+    });
+  }
 
-    if (!confirmar) {
+  async function confirmarExclusaoLead() {
+    if (!leadParaExcluir || excluindoLead) {
       return;
     }
 
+    setExcluindoLead(true);
     setErro("");
+
+    const leadId = leadParaExcluir.id;
 
     const supabase =
       createSupabaseBrowserClient();
@@ -726,6 +741,7 @@ export default function AdminPage() {
         `Não foi possível excluir o lead: ${error.message}`
       );
 
+      setExcluindoLead(false);
       return;
     }
 
@@ -738,6 +754,9 @@ export default function AdminPage() {
     if (leadSelecionado?.id === leadId) {
       setLeadSelecionado(null);
     }
+
+    setLeadParaExcluir(null);
+    setExcluindoLead(false);
   }
 
   const dadosPeriodo = useMemo(() => {
@@ -2492,6 +2511,157 @@ export default function AdminPage() {
               </div>
             </div>
           </section>
+        </div>
+      )}
+
+      {/* MODAL DE CONFIRMAÇÃO DE EXCLUSÃO */}
+      {leadParaExcluir && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-4 backdrop-blur-md"
+          onMouseDown={(event) => {
+            if (
+              event.target === event.currentTarget &&
+              !excluindoLead
+            ) {
+              setLeadParaExcluir(null);
+            }
+          }}
+        >
+          <div className="relative w-full max-w-[440px] overflow-hidden rounded-3xl border border-white/10 bg-[#0b0e0c] shadow-2xl shadow-black/60">
+            
+            {/* brilho superior */}
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-red-500/10 to-transparent" />
+
+            <div className="relative p-6 sm:p-7">
+              
+              {/* ícone + fechar */}
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 text-red-400">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    className="h-7 w-7"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 7h12M10 11v6M14 11v6M9 7V4h6v3M8 7l1 13h6l1-13"
+                    />
+                  </svg>
+                </div>
+
+                <button
+                  type="button"
+                  disabled={excluindoLead}
+                  onClick={() =>
+                    setLeadParaExcluir(null)
+                  }
+                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-lg text-gray-500 transition hover:bg-white/[0.07] hover:text-white disabled:cursor-not-allowed disabled:opacity-40"
+                  aria-label="Fechar"
+                >
+                  ×
+                </button>
+              </div>
+
+              {/* conteúdo */}
+              <div className="mt-6">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-red-400">
+                  Excluir lead
+                </p>
+
+                <h2 className="mt-2 text-xl font-black text-white sm:text-2xl">
+                  Tem certeza que deseja excluir?
+                </h2>
+
+                <p className="mt-3 text-sm leading-6 text-gray-500">
+                  Você está prestes a excluir permanentemente o
+                  contato abaixo.
+                </p>
+              </div>
+
+              {/* lead */}
+              <div className="mt-5 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.025] p-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red-500/10 text-sm font-black text-red-300">
+                  {obterIniciais(
+                    leadParaExcluir.nome
+                  )}
+                </div>
+
+                <div className="min-w-0">
+                  <p className="text-[11px] text-gray-600">
+                    Lead selecionado
+                  </p>
+
+                  <p className="mt-0.5 truncate font-bold text-white">
+                    {leadParaExcluir.nome}
+                  </p>
+                </div>
+              </div>
+
+              {/* aviso */}
+              <div className="mt-4 flex gap-3 rounded-2xl border border-red-500/10 bg-red-500/[0.05] p-4">
+                <div className="mt-0.5 shrink-0 text-red-400">
+                  ⚠
+                </div>
+
+                <p className="text-xs leading-5 text-red-200/70">
+                  Essa ação é definitiva. Depois de excluir,
+                  os dados deste lead não poderão ser
+                  recuperados pelo painel.
+                </p>
+              </div>
+
+              {/* botões */}
+              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <button
+                  type="button"
+                  disabled={excluindoLead}
+                  onClick={() =>
+                    setLeadParaExcluir(null)
+                  }
+                  className="order-2 flex h-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.025] px-4 text-sm font-bold text-gray-400 transition hover:bg-white/[0.06] hover:text-white disabled:cursor-not-allowed disabled:opacity-40 sm:order-1"
+                >
+                  Cancelar
+                </button>
+
+                <button
+                  type="button"
+                  disabled={excluindoLead}
+                  onClick={
+                    confirmarExclusaoLead
+                  }
+                  className="order-1 flex h-12 items-center justify-center gap-2 rounded-xl border border-red-500/30 bg-red-600 px-4 text-sm font-black text-white transition hover:bg-red-500 disabled:cursor-not-allowed disabled:opacity-60 sm:order-2"
+                >
+                  {excluindoLead ? (
+                    <>
+                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                      Excluindo...
+                    </>
+                  ) : (
+                    <>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        className="h-4 w-4"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 7h12M10 11v6M14 11v6M9 7V4h6v3M8 7l1 13h6l1-13"
+                        />
+                      </svg>
+
+                      Excluir permanentemente
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </main>
