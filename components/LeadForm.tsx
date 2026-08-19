@@ -287,10 +287,10 @@ export default function LeadForm() {
   return (
     <div
       id="formulario"
-      className="mx-auto w-full max-w-xl rounded-3xl border border-blue-400/20 bg-black/60 p-6 shadow-[0_25px_80px_rgba(0,0,0,0.75)] backdrop-blur-2xl md:p-8 lg:max-w-none"
+      className="mx-auto w-full max-w-xl rounded-3xl border border-red-400/20 bg-black/60 p-6 shadow-[0_25px_80px_rgba(0,0,0,0.75)] backdrop-blur-2xl md:p-8 lg:max-w-none"
     >
-      <div className="inline-flex items-center gap-2 rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-2 text-xs font-semibold text-blue-300">
-        <span className="h-2 w-2 animate-pulse rounded-full bg-blue-400" />
+      <div className="inline-flex items-center gap-2 rounded-full border border-red-500/25 bg-red-500/10 px-3 py-2 text-xs font-semibold text-red-300">
+        <span className="h-2 w-2 animate-pulse rounded-full bg-red-400" />
 
         Equipe disponível agora
       </div>
@@ -330,7 +330,7 @@ export default function LeadForm() {
                 event.target.value
               )
             }
-            className="w-full rounded-xl border border-white/10 bg-white/[0.07] px-4 py-4 text-white outline-none transition placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+            className="w-full rounded-xl border border-white/10 bg-white/[0.07] px-4 py-4 text-white outline-none transition placeholder:text-gray-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/10"
           />
         </div>
 
@@ -358,7 +358,7 @@ export default function LeadForm() {
                 )
               )
             }
-            className="w-full rounded-xl border border-white/10 bg-white/[0.07] px-4 py-4 text-white outline-none transition placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+            className="w-full rounded-xl border border-white/10 bg-white/[0.07] px-4 py-4 text-white outline-none transition placeholder:text-gray-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/10"
           />
         </div>
 
@@ -381,7 +381,7 @@ export default function LeadForm() {
                   event.target.value
                 )
               }
-              className="w-full rounded-xl border border-white/10 bg-[#111827] px-4 py-4 text-white outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+              className="w-full rounded-xl border border-white/10 bg-[#111827] px-4 py-4 text-white outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-500/10"
             >
               <option value="">
                 Selecione
@@ -435,7 +435,7 @@ export default function LeadForm() {
                   event.target.value
                 )
               }
-              className="w-full rounded-xl border border-white/10 bg-[#111827] px-4 py-4 text-white outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+              className="w-full rounded-xl border border-white/10 bg-[#111827] px-4 py-4 text-white outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-500/10"
             >
               <option value="">
                 Selecione
@@ -465,6 +465,14 @@ export default function LeadForm() {
                 Recaídas frequentes
               </option>
 
+              <option value="Informações sobre internação voluntária">
+                Informações sobre internação voluntária
+              </option>
+
+              <option value="Informações sobre internação involuntária">
+                Informações sobre internação involuntária
+              </option>
+
               <option value="Outra situação">
                 Outra situação
               </option>
@@ -492,7 +500,7 @@ export default function LeadForm() {
                 event.target.value
               )
             }
-            className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.07] px-4 py-4 text-white outline-none transition placeholder:text-gray-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+            className="w-full resize-none rounded-xl border border-white/10 bg-white/[0.07] px-4 py-4 text-white outline-none transition placeholder:text-gray-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/10"
           />
         </div>
 
@@ -508,7 +516,7 @@ export default function LeadForm() {
         {successMessage && (
           <div
             role="status"
-            className="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4 text-sm text-blue-300"
+            className="rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300"
           >
             {successMessage}
           </div>
@@ -517,7 +525,7 @@ export default function LeadForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-xl bg-blue-600 py-4 text-base font-black text-white shadow-[0_15px_45px_rgba(37,99,235,0.30)] transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:bg-blue-900 md:py-5 md:text-lg"
+          className="w-full rounded-xl bg-red-600 py-4 text-base font-black text-white shadow-[0_15px_45px_rgba(220,38,38,0.24)] transition hover:bg-red-500 disabled:cursor-not-allowed disabled:bg-red-900 md:py-5 md:text-lg"
         >
           {loading
             ? "Enviando solicitação..."
@@ -525,7 +533,7 @@ export default function LeadForm() {
         </button>
 
         <div className="flex items-start gap-3 pt-1 text-xs leading-5 text-gray-500">
-          <span className="mt-0.5 text-blue-400">
+          <span className="mt-0.5 text-red-400">
             ●
           </span>
 

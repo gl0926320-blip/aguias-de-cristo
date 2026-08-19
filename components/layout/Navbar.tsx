@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ||
-  "5562998213325";
+  "5562994093021";
 
-const PHONE_DISPLAY = "(62) 99821-3325";
+const PHONE_DISPLAY = "(62) 99409-3021";
 
 const menuItems = [
   {
@@ -87,23 +87,22 @@ export default function Navbar() {
           >
 <div className="flex h-[76px] w-[76px] shrink-0 items-center justify-center sm:h-[84px] sm:w-[84px] lg:h-[92px] lg:w-[92px]">
   <img
-    src="/images/logo-aguias.png"
-    alt="Logo Águias de Cristo"
+    src="/images/logo-reconciliar.png"
+    alt="Logo Reconciliar"
     className="h-full w-full object-contain drop-shadow-[0_10px_22px_rgba(0,0,0,0.55)]"
   />
 </div>
 
             <div className="min-w-0">
               <h2 className="truncate text-base font-black tracking-wide text-white sm:text-lg lg:text-xl">
-                ÁGUIAS
-                <span className="text-blue-400">
-                  {" "}
-                  DE CRISTO
+                RECON
+                <span className="text-red-500">
+                  CILIAR
                 </span>
               </h2>
 
               <p className="mt-0.5 text-[10px] text-gray-400 sm:text-xs">
-                Lugar de Restauração
+                Tratamento para dependência química
               </p>
             </div>
           </a>
@@ -117,7 +116,7 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="relative py-2 text-sm font-medium text-gray-300 transition hover:text-white after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-blue-500 after:transition-all hover:after:w-full"
+                className="relative py-2 text-sm font-medium text-gray-300 transition hover:text-white after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-red-500 after:transition-all hover:after:w-full"
               >
                 {item.label}
               </a>
@@ -131,17 +130,17 @@ export default function Navbar() {
               className="hidden text-right xl:block"
             >
               <span className="block text-xs text-gray-400">
-                Atendimento 24h
+                Fale com a equipe
               </span>
 
-              <strong className="mt-0.5 block text-sm text-white transition hover:text-blue-400">
+              <strong className="mt-0.5 block text-sm text-white transition hover:text-red-400">
                 {PHONE_DISPLAY}
               </strong>
             </a>
 
             <a
               href="#formulario"
-              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-blue-600 px-5 text-sm font-black text-white shadow-[0_12px_35px_rgba(37,99,235,0.28)] transition hover:-translate-y-0.5 hover:bg-blue-500 xl:px-6"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-red-600 px-5 text-sm font-black text-white shadow-[0_12px_35px_rgba(220,38,38,0.22)] transition hover:-translate-y-0.5 hover:bg-red-500 xl:px-6"
             >
               Quero Ajuda
             </a>
@@ -151,7 +150,7 @@ export default function Navbar() {
           <div className="flex shrink-0 items-center gap-2 lg:hidden">
             <a
               href="#formulario"
-              className="hidden min-h-10 items-center justify-center rounded-xl bg-blue-600 px-4 text-xs font-black text-white transition hover:bg-blue-500 min-[420px]:inline-flex sm:min-h-11 sm:text-sm"
+              className="hidden min-h-10 items-center justify-center rounded-xl bg-red-600 px-4 text-xs font-black text-white transition hover:bg-red-500 min-[420px]:inline-flex sm:min-h-11 sm:text-sm"
             >
               Quero Ajuda
             </a>
@@ -167,7 +166,7 @@ export default function Navbar() {
                   : "Abrir menu"
               }
               aria-expanded={menuAberto}
-              className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-white transition hover:border-blue-500/40 hover:bg-blue-500/10"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-white transition hover:border-red-500/40 hover:bg-red-500/10"
             >
               {menuAberto ? (
                 <svg
@@ -234,10 +233,10 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={fecharMenu}
-                className="flex min-h-14 items-center justify-between rounded-2xl border border-transparent px-4 text-sm font-bold text-gray-300 transition hover:border-blue-500/20 hover:bg-blue-500/10 hover:text-white"
+                className="flex min-h-14 items-center justify-between rounded-2xl border border-transparent px-4 text-sm font-bold text-gray-300 transition hover:border-red-500/20 hover:bg-red-500/10 hover:text-white"
               >
                 <span className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/[0.05] text-xs text-blue-400">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/[0.05] text-xs text-red-400">
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
@@ -266,12 +265,12 @@ export default function Navbar() {
             <a
               href={`tel:+${WHATSAPP_NUMBER}`}
               onClick={fecharMenu}
-              className="flex min-h-14 items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 text-center text-sm font-bold text-gray-200 transition hover:border-blue-500/30 hover:bg-blue-500/10"
+              className="flex min-h-14 items-center justify-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 text-center text-sm font-bold text-gray-200 transition hover:border-red-500/30 hover:bg-red-500/10"
             >
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="h-5 w-5 text-blue-400"
+                className="h-5 w-5 text-red-400"
                 aria-hidden="true"
               >
                 <path
@@ -291,7 +290,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={fecharMenu}
-              className="flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-blue-600 px-4 text-center text-sm font-black text-white shadow-[0_12px_35px_rgba(37,99,235,0.25)] transition hover:bg-blue-500"
+              className="flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-red-600 px-4 text-center text-sm font-black text-white shadow-[0_12px_35px_rgba(220,38,38,0.20)] transition hover:bg-red-500"
             >
               <svg
                 viewBox="0 0 24 24"
@@ -317,9 +316,9 @@ export default function Navbar() {
             </a>
           </div>
 
-          <div className="mt-4 rounded-2xl border border-blue-500/15 bg-blue-500/[0.07] px-4 py-3 text-center">
-            <p className="text-xs font-bold text-blue-300">
-              Atendimento confidencial 24 horas
+          <div className="mt-4 rounded-2xl border border-red-500/15 bg-red-500/[0.07] px-4 py-3 text-center">
+            <p className="text-xs font-bold text-red-300">
+              Atendimento confidencial
             </p>
 
             <p className="mt-1 text-[11px] text-gray-500">

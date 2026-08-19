@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const WHATSAPP_NUMBER =
   process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ||
-  "5562998213325";
+  "5562994093021";
 
 const whatsappUrl =
   `https://wa.me/${WHATSAPP_NUMBER}` +
@@ -15,7 +15,7 @@ const etapas = [
     numero: "01",
     titulo: "Fale com nossa equipe",
     descricao:
-      "Conte de forma confidencial o que está acontecendo. Nossa equipe está disponível 24 horas.",
+      "Conte de forma confidencial o que está acontecendo. Nossa equipe vai entender o caso e orientar os próximos passos.",
     icone: (
       <svg
         viewBox="0 0 24 24"
@@ -89,84 +89,84 @@ const diferenciais = [
   {
     titulo: "Atendimento humanizado",
     descricao:
-      "Cada pessoa é acolhida com dignidade, respeito e escuta, sem julgamentos.",
+      "Cada pessoa é acolhida com respeito, escuta e cuidado, considerando as necessidades de cada caso.",
     icone: "♡",
   },
   {
     titulo: "Equipe multidisciplinar",
     descricao:
-      "Acompanhamento integrado durante todas as etapas do processo de recuperação.",
+      "Atendimento com psiquiatra, psicólogo e terapeuta, integrando diferentes áreas no processo de recuperação.",
     icone: "✦",
   },
   {
-    titulo: "Acompanhamento familiar",
+    titulo: "Internação voluntária e involuntária",
     descricao:
-      "A família recebe orientação e participa do processo de restauração.",
+      "Orientação sobre as modalidades de internação, conforme avaliação profissional e os requisitos aplicáveis a cada situação.",
+    icone: "✓",
+  },
+  {
+    titulo: "Masculino e feminino",
+    descricao:
+      "Atendimento direcionado a homens e mulheres, de acordo com o perfil e a necessidade de acolhimento.",
+    icone: "↔",
+  },
+  {
+    titulo: "Ambiente aconchegante",
+    descricao:
+      "Cuidado em ambiente acolhedor, pensado para oferecer segurança, tranquilidade e suporte durante o tratamento.",
     icone: "⌂",
   },
   {
-    titulo: "Apoio espiritual cristão",
+    titulo: "Direcionamento responsável",
     descricao:
-      "A fé faz parte da rotina e fortalece o propósito de transformação.",
-    icone: "✝",
-  },
-  {
-    titulo: "Ambiente rural tranquilo",
-    descricao:
-      "Espaço afastado dos estímulos urbanos, cercado por natureza e tranquilidade.",
-    icone: "⌁",
-  },
-  {
-    titulo: "Rotina segura e estruturada",
-    descricao:
-      "Atividades planejadas, acompanhamento contínuo e organização diária.",
-    icone: "✓",
+      "Após compreender o caso, a equipe orienta a alternativa de atendimento mais adequada e os próximos passos.",
+    icone: "→",
   },
 ];
 
 const estrutura = [
   {
-    titulo: "Alojamentos",
+    titulo: "Avaliação do caso",
     descricao:
-      "Espaços organizados para descanso, convivência e recuperação.",
+      "A situação é compreendida de forma individual para orientar a melhor possibilidade de atendimento.",
   },
   {
-    titulo: "Área de convivência",
+    titulo: "Equipe multidisciplinar",
     descricao:
-      "Ambiente para atividades, integração e momentos de reflexão.",
+      "Psiquiatra, psicólogo e terapeuta participam do cuidado conforme a necessidade do paciente.",
   },
   {
-    titulo: "Espaço espiritual",
+    titulo: "Acolhimento masculino e feminino",
     descricao:
-      "Local dedicado a cultos, orações e desenvolvimento espiritual.",
+      "Atendimento para homens e mulheres, com direcionamento de acordo com o perfil de cada caso.",
   },
   {
-    titulo: "Área externa",
+    titulo: "Rede de atendimento",
     descricao:
-      "Contato com a natureza, atividades físicas e ambiente de tranquilidade.",
+      "As vagas podem ser direcionadas para unidades parceiras, conforme disponibilidade e necessidade do atendimento.",
   },
 ];
 
 const perguntas = [
   {
-    pergunta: "Quanto tempo dura o tratamento?",
+    pergunta: "Vocês atendem homens e mulheres?",
     resposta:
-      "O tempo pode variar conforme o caso e a evolução de cada pessoa. A equipe orienta a família após compreender a situação.",
+      "Sim. A Reconciliar realiza atendimento para o público masculino e feminino, com direcionamento conforme o perfil e a necessidade de cada caso.",
   },
   {
-    pergunta: "Como funciona o processo de acolhimento?",
+    pergunta: "Há internação voluntária e involuntária?",
     resposta:
-      "Primeiro conversamos com a família ou com a pessoa que precisa de ajuda. Depois explicamos o funcionamento da comunidade, avaliamos o caso e orientamos os próximos passos.",
+      "Sim. A equipe orienta sobre internação voluntária e involuntária. A modalidade adequada depende da situação, da avaliação profissional e dos requisitos aplicáveis ao caso.",
   },
   {
-    pergunta: "A família recebe acompanhamento?",
+    pergunta: "Quais profissionais participam do atendimento?",
     resposta:
-      "Sim. A família faz parte do processo de recuperação e recebe orientações durante o período de tratamento.",
+      "O atendimento pode contar com psiquiatra, psicólogo, terapeuta e equipe multidisciplinar, conforme a necessidade do paciente.",
   },
   {
-    pergunta: "Existe atendimento durante a madrugada?",
+    pergunta: "Como funciona o primeiro atendimento?",
     resposta:
-      "Sim. O atendimento para orientações e solicitações de ajuda funciona 24 horas por dia, todos os dias da semana.",
+      "Primeiro conversamos com a família ou com a pessoa que precisa de ajuda, entendemos a situação e orientamos os próximos passos e as possibilidades de acolhimento.",
   },
   {
     pergunta: "O atendimento é confidencial?",
@@ -201,17 +201,17 @@ export default function ConversionSections() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-y divide-white/10 px-4 sm:px-6 md:grid-cols-4 md:divide-y-0 lg:px-8">
           <div className="flex min-h-28 flex-col justify-center px-4 py-5 sm:px-6">
             <strong className="text-sm font-black text-white sm:text-base">
-              Atendimento 24h
+              Atendimento humanizado
             </strong>
 
             <span className="mt-1 text-xs leading-5 text-gray-500">
-              Equipe disponível todos os dias
+              Orientação para cada caso
             </span>
           </div>
 
           <div className="flex min-h-28 flex-col justify-center px-4 py-5 sm:px-6">
             <strong className="text-sm font-black text-white sm:text-base">
-              Sigilo absoluto
+              Atendimento confidencial
             </strong>
 
             <span className="mt-1 text-xs leading-5 text-gray-500">
@@ -221,21 +221,21 @@ export default function ConversionSections() {
 
           <div className="flex min-h-28 flex-col justify-center px-4 py-5 sm:px-6">
             <strong className="text-sm font-black text-white sm:text-base">
-              Equipe preparada
+              Equipe multidisciplinar
             </strong>
 
             <span className="mt-1 text-xs leading-5 text-gray-500">
-              Acolhimento humanizado
+              Psiquiatra, psicólogo e terapeuta
             </span>
           </div>
 
           <div className="flex min-h-28 flex-col justify-center px-4 py-5 sm:px-6">
             <strong className="text-sm font-black text-white sm:text-base">
-              Apoio à família
+              Masculino e feminino
             </strong>
 
             <span className="mt-1 text-xs leading-5 text-gray-500">
-              Orientação durante o processo
+              Acolhimento para ambos os públicos
             </span>
           </div>
         </div>
@@ -248,7 +248,7 @@ export default function ConversionSections() {
       >
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <span className="text-xs font-black uppercase tracking-[0.22em] text-blue-500">
+            <span className="text-xs font-black uppercase tracking-[0.22em] text-red-500">
               O primeiro passo
             </span>
 
@@ -266,14 +266,14 @@ export default function ConversionSections() {
             {etapas.map((etapa) => (
               <article
                 key={etapa.numero}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#070d1a] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500/30 sm:p-7"
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-[#070d1a] p-6 transition duration-300 hover:-translate-y-1 hover:border-red-500/30 sm:p-7"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10 text-blue-400">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-red-500/20 bg-red-500/10 text-red-400">
                     {etapa.icone}
                   </div>
 
-                  <span className="text-4xl font-black text-white/[0.04] transition group-hover:text-blue-500/10">
+                  <span className="text-4xl font-black text-white/[0.04] transition group-hover:text-red-500/10">
                     {etapa.numero}
                   </span>
                 </div>
@@ -293,9 +293,9 @@ export default function ConversionSections() {
 
       {/* CTA INTERMEDIÁRIO */}
       <section className="bg-[#03050a] px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] border border-blue-500/20 bg-gradient-to-r from-blue-950/70 via-[#071327] to-[#030711] px-5 py-8 sm:px-8 sm:py-10 lg:flex lg:items-center lg:justify-between lg:px-12">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[32px] border border-red-500/20 bg-gradient-to-r from-red-950/70 via-[#071327] to-[#030711] px-5 py-8 sm:px-8 sm:py-10 lg:flex lg:items-center lg:justify-between lg:px-12">
           <div className="relative z-10 max-w-2xl">
-            <p className="text-xs font-bold uppercase tracking-wider text-blue-500">
+            <p className="text-xs font-bold uppercase tracking-wider text-red-500">
               Não espere a situação piorar
             </p>
 
@@ -312,7 +312,7 @@ export default function ConversionSections() {
           <div className="relative z-10 mt-6 flex flex-col gap-3 sm:flex-row lg:mt-0">
             <a
               href="#formulario"
-              className="flex min-h-13 items-center justify-center rounded-xl bg-blue-600 px-6 py-4 text-center text-sm font-black transition hover:bg-blue-500"
+              className="flex min-h-13 items-center justify-center rounded-xl bg-red-600 px-6 py-4 text-center text-sm font-black transition hover:bg-red-500"
             >
               Solicitar atendimento
             </a>
@@ -321,13 +321,13 @@ export default function ConversionSections() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-13 items-center justify-center rounded-xl border border-white/15 px-6 py-4 text-center text-sm font-bold transition hover:border-blue-500/40 hover:bg-blue-500/10"
+              className="flex min-h-13 items-center justify-center rounded-xl border border-white/15 px-6 py-4 text-center text-sm font-bold transition hover:border-red-500/40 hover:bg-red-500/10"
             >
               Falar no WhatsApp
             </a>
           </div>
 
-          <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-500/10 blur-[80px]" />
+          <div className="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-red-500/10 blur-[80px]" />
         </div>
       </section>
 
@@ -335,7 +335,7 @@ export default function ConversionSections() {
       <section className="border-y border-white/10 bg-[#050914] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-xs font-black uppercase tracking-[0.22em] text-blue-500">
+            <span className="text-xs font-black uppercase tracking-[0.22em] text-red-500">
               Por que escolher
             </span>
 
@@ -353,9 +353,9 @@ export default function ConversionSections() {
             {diferenciais.map((diferencial) => (
               <article
                 key={diferencial.titulo}
-                className="group rounded-3xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-500/25 hover:bg-blue-500/[0.04]"
+                className="group rounded-3xl border border-white/10 bg-white/[0.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-red-500/25 hover:bg-red-500/[0.04]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-xl text-blue-500 transition group-hover:border-blue-500/20 group-hover:bg-blue-500/10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] text-xl text-red-500 transition group-hover:border-red-500/20 group-hover:bg-red-500/10">
                   {diferencial.icone}
                 </div>
 
@@ -380,37 +380,37 @@ export default function ConversionSections() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div>
-              <span className="text-xs font-black uppercase tracking-[0.22em] text-blue-500">
-                Nossa estrutura
+              <span className="text-xs font-black uppercase tracking-[0.22em] text-red-500">
+                Como funciona
               </span>
 
               <h2 className="mt-4 text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
-                Um ambiente de paz, segurança e restauração.
+                Cuidado completo, humano e responsável.
               </h2>
 
               <p className="mt-5 text-base leading-8 text-gray-400 sm:text-lg">
-                A comunidade está localizada em uma região tranquila, afastada
-                do movimento urbano e preparada para apoiar a recuperação.
+                A Reconciliar realiza o primeiro atendimento, entende a necessidade
+                de cada caso e orienta o acolhimento de forma responsável.
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-3">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-4">
-                  <strong className="text-2xl font-black text-blue-500">
-                    30
+                  <strong className="text-2xl font-black text-red-500">
+                    M/F
                   </strong>
 
                   <p className="mt-1 text-xs text-gray-500">
-                    Vagas disponíveis
+                    Atendimento masculino e feminino
                   </p>
                 </div>
 
                 <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-4">
-                  <strong className="text-2xl font-black text-blue-500">
-                    24h
+                  <strong className="text-2xl font-black text-red-500">
+                    MULTI
                   </strong>
 
                   <p className="mt-1 text-xs text-gray-500">
-                    Atendimento contínuo
+                    Equipe multidisciplinar
                   </p>
                 </div>
               </div>
@@ -420,13 +420,13 @@ export default function ConversionSections() {
               {estrutura.map((item, index) => (
                 <article
                   key={item.titulo}
-                  className={`relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#0b1427] to-[#050914] p-6 sm:min-h-56 ${
+                  className={`relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#150708] to-[#070303] p-6 sm:min-h-56 ${
                     index === 0 || index === 3
                       ? "sm:translate-y-5"
                       : ""
                   }`}
                 >
-                  <span className="text-xs font-black text-blue-500">
+                  <span className="text-xs font-black text-red-500">
                     0{index + 1}
                   </span>
 
@@ -438,7 +438,7 @@ export default function ConversionSections() {
                     {item.descricao}
                   </p>
 
-                  <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-blue-500/[0.06] blur-3xl" />
+                  <div className="pointer-events-none absolute -bottom-16 -right-16 h-36 w-36 rounded-full bg-red-500/[0.06] blur-3xl" />
                 </article>
               ))}
             </div>
@@ -453,7 +453,7 @@ export default function ConversionSections() {
       >
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
-            <span className="text-xs font-black uppercase tracking-[0.22em] text-blue-500">
+            <span className="text-xs font-black uppercase tracking-[0.22em] text-red-500">
               Tire suas dúvidas
             </span>
 
@@ -470,7 +470,7 @@ export default function ConversionSections() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex min-h-12 items-center justify-center rounded-xl border border-blue-500/25 bg-blue-500/10 px-5 text-sm font-black text-blue-300 transition hover:bg-blue-500/20"
+              className="mt-7 inline-flex min-h-12 items-center justify-center rounded-xl border border-red-500/25 bg-red-500/10 px-5 text-sm font-black text-red-300 transition hover:bg-red-500/20"
             >
               Tirar dúvidas pelo WhatsApp
             </a>
@@ -485,7 +485,7 @@ export default function ConversionSections() {
                   key={item.pergunta}
                   className={`overflow-hidden rounded-2xl border transition ${
                     aberta
-                      ? "border-blue-500/25 bg-blue-500/[0.05]"
+                      ? "border-red-500/25 bg-red-500/[0.05]"
                       : "border-white/10 bg-white/[0.02]"
                   }`}
                 >
@@ -502,7 +502,7 @@ export default function ConversionSections() {
                     </span>
 
                     <span
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 text-xl text-blue-500 transition ${
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 text-xl text-red-500 transition ${
                         aberta ? "rotate-45" : ""
                       }`}
                     >
@@ -533,10 +533,10 @@ export default function ConversionSections() {
       {/* CTA FINAL */}
       <section className="relative overflow-hidden bg-[#03050a] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-28">
         <div className="relative z-10 mx-auto max-w-4xl text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-xs font-bold text-blue-400">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-blue-500" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-4 py-2 text-xs font-bold text-red-400">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-red-500" />
 
-            Atendimento disponível agora
+            Fale com nossa equipe
           </span>
 
           <h2 className="mt-6 text-3xl font-black leading-tight sm:text-4xl lg:text-6xl">
@@ -551,25 +551,25 @@ export default function ConversionSections() {
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               href="#formulario"
-              className="flex min-h-14 items-center justify-center rounded-xl bg-blue-600 px-7 text-sm font-black transition hover:bg-blue-500 sm:text-base"
+              className="flex min-h-14 items-center justify-center rounded-xl bg-red-600 px-7 text-sm font-black transition hover:bg-red-500 sm:text-base"
             >
               Solicitar atendimento agora
             </a>
 
             <a
               href={`tel:+${WHATSAPP_NUMBER}`}
-              className="flex min-h-14 items-center justify-center rounded-xl border border-white/15 px-7 text-sm font-bold transition hover:border-blue-500/30 hover:bg-blue-500/10 sm:text-base"
+              className="flex min-h-14 items-center justify-center rounded-xl border border-white/15 px-7 text-sm font-bold transition hover:border-red-500/30 hover:bg-red-500/10 sm:text-base"
             >
               Ligar para a equipe
             </a>
           </div>
 
           <p className="mt-5 text-xs text-gray-600">
-            Atendimento confidencial 24 horas por dia.
+            Atendimento confidencial e orientação individualizada.
           </p>
         </div>
 
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/[0.06] blur-[130px]" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-500/[0.06] blur-[130px]" />
       </section>
 
       {/* RODAPÉ */}
@@ -577,22 +577,21 @@ export default function ConversionSections() {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
           <div>
             <p className="font-black">
-              ÁGUIAS
-              <span className="text-blue-500">
-                {" "}
-                DE CRISTO
+              RECON
+              <span className="text-red-500">
+                CILIAR
               </span>
             </p>
 
             <p className="mt-1 text-xs text-gray-600">
-              Lugar de Restauração
+              Tratamento para dependência química
             </p>
           </div>
 
           <div className="text-xs leading-5 text-gray-600">
             <p>Atendimento 24 horas</p>
 
-            <p>Comunidade Terapêutica Águias de Cristo</p>
+            <p>Reconciliar</p>
           </div>
 
           <p className="text-xs text-gray-700">
@@ -608,7 +607,7 @@ export default function ConversionSections() {
           target="_blank"
           rel="noopener noreferrer"
           data-track-id="whatsapp-flutuante"
-          className="flex min-h-12 items-center justify-center rounded-xl bg-blue-600 px-5 text-sm font-black text-white transition hover:bg-blue-500"
+          className="flex min-h-12 items-center justify-center rounded-xl bg-red-600 px-5 text-sm font-black text-white transition hover:bg-red-500"
         >
           Falar no WhatsApp
         </a>
@@ -617,7 +616,7 @@ export default function ConversionSections() {
           href={`tel:+${WHATSAPP_NUMBER}`}
           data-track-id="telefone-flutuante"
           aria-label="Ligar agora"
-          className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-lg text-blue-400"
+          className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] text-lg text-red-400"
         >
           ☎
         </a>
